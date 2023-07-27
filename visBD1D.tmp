@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://bvypn0bycaohr"]
+
+[ext_resource type="Shader" path="res://canvas_shader.gdshader" id="1_b7i6b"]
+[ext_resource type="Script" path="res://shader_change.gd" id="2_qm5d8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nqta8"]
+shader = ExtResource("1_b7i6b")
+shader_parameter/aspect_ratio = null
+shader_parameter/scale = null
+shader_parameter/x_min = null
+shader_parameter/y_min = null
+shader_parameter/num_iterations = null
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_0d4ao"]
+
+[node name="Fractal Visualizer" type="Node2D"]
+position = Vector2(960, 540)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_nqta8")
+scale = Vector2(1920, 1080)
+texture = SubResource("CanvasTexture_0d4ao")
+script = ExtResource("2_qm5d8")
